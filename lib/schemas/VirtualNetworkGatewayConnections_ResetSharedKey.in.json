@@ -1,0 +1,37 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualNetworkGatewayConnectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "The virtual network connection reset shared key",
+            "properties": {
+                "keyLength": {
+                    "description": "The virtual network connection reset shared key length, should between 1 and 128.",
+                    "format": "int32",
+                    "maximum": 128,
+                    "minimum": 1,
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "keyLength"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

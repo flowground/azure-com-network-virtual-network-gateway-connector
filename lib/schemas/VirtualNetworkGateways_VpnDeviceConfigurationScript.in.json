@@ -1,0 +1,39 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualNetworkGatewayConnectionName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "Vpn device configuration script generation parameters",
+            "properties": {
+                "deviceFamily": {
+                    "description": "The device family for the vpn device.",
+                    "type": "string"
+                },
+                "firmwareVersion": {
+                    "description": "The firmware version for the vpn device.",
+                    "type": "string"
+                },
+                "vendor": {
+                    "description": "The vendor for the vpn device.",
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

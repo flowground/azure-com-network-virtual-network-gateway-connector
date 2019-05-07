@@ -1,0 +1,152 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "virtualNetworkGatewayName": {
+            "required": true,
+            "type": "string"
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": "An IPSec parameters for a virtual network gateway P2S connection.",
+            "properties": {
+                "dhGroup": {
+                    "description": "The DH Groups used in IKE Phase 1 for initial SA.",
+                    "enum": [
+                        "None",
+                        "DHGroup1",
+                        "DHGroup2",
+                        "DHGroup14",
+                        "DHGroup2048",
+                        "ECP256",
+                        "ECP384",
+                        "DHGroup24"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "DhGroup"
+                    }
+                },
+                "ikeEncryption": {
+                    "description": "The IKE encryption algorithm (IKE phase 2).",
+                    "enum": [
+                        "DES",
+                        "DES3",
+                        "AES128",
+                        "AES192",
+                        "AES256",
+                        "GCMAES256",
+                        "GCMAES128"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "IkeEncryption"
+                    }
+                },
+                "ikeIntegrity": {
+                    "description": "The IKE integrity algorithm (IKE phase 2).",
+                    "enum": [
+                        "MD5",
+                        "SHA1",
+                        "SHA256",
+                        "SHA384",
+                        "GCMAES256",
+                        "GCMAES128"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "IkeIntegrity"
+                    }
+                },
+                "ipsecEncryption": {
+                    "description": "The IPSec encryption algorithm (IKE phase 1).",
+                    "enum": [
+                        "None",
+                        "DES",
+                        "DES3",
+                        "AES128",
+                        "AES192",
+                        "AES256",
+                        "GCMAES128",
+                        "GCMAES192",
+                        "GCMAES256"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "IpsecEncryption"
+                    }
+                },
+                "ipsecIntegrity": {
+                    "description": "The IPSec integrity algorithm (IKE phase 1).",
+                    "enum": [
+                        "MD5",
+                        "SHA1",
+                        "SHA256",
+                        "GCMAES128",
+                        "GCMAES192",
+                        "GCMAES256"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "IpsecIntegrity"
+                    }
+                },
+                "pfsGroup": {
+                    "description": "The Pfs Groups used in IKE Phase 2 for new child SA.",
+                    "enum": [
+                        "None",
+                        "PFS1",
+                        "PFS2",
+                        "PFS2048",
+                        "ECP256",
+                        "ECP384",
+                        "PFS24",
+                        "PFS14",
+                        "PFSMM"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": true,
+                        "name": "PfsGroup"
+                    }
+                },
+                "saDataSizeKilobytes": {
+                    "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) payload size in KB for P2S client..",
+                    "format": "int32",
+                    "type": "integer"
+                },
+                "saLifeTimeSeconds": {
+                    "description": "The IPSec Security Association (also called Quick Mode or Phase 2 SA) lifetime in seconds for P2S client.",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "saLifeTimeSeconds",
+                "saDataSizeKilobytes",
+                "ipsecEncryption",
+                "ipsecIntegrity",
+                "ikeEncryption",
+                "ikeIntegrity",
+                "dhGroup",
+                "pfsGroup"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

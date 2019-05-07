@@ -1,0 +1,577 @@
+{
+    "title": "NetworkManagementClient",
+    "description": "The Microsoft Azure Network management API provides a RESTful set of web services that interact with Microsoft Azure Networks service to manage your network resources. The API has entities that capture the relationship between an end user and the Microsoft Azure Networks service.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/network-virtualNetworkGateway/2018-12-01/swagger.json",
+    "envVars": {
+        "OAUTH_CLIENT_ID": {
+            "description": "OAuth Client ID"
+        },
+        "OAUTH_CLIENT_SECRET": {
+            "description": "OAuth Client Secret"
+        }
+    },
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://management.azure.com/",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            },
+            "azure_auth": {
+                "label": "Azure Active Directory OAuth2 Flow",
+                "viewClass": "OAuthFieldView"
+            }
+        },
+        "oauth2": {
+            "client_id": "{{OAUTH_CLIENT_ID}}",
+            "client_secret": "{{OAUTH_CLIENT_SECRET}}",
+            "auth_uri": "https://login.microsoftonline.com/common/oauth2/authorize"
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "VirtualNetworkGatewayConnections_List": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_List.js",
+            "title": "The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.",
+            "description": "The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_Delete": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_Delete.js",
+            "title": "Deletes the specified virtual network Gateway connection.",
+            "description": "Deletes the specified virtual network Gateway connection.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_Get": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_Get.js",
+            "title": "Gets the specified virtual network gateway connection by resource group.",
+            "description": "Gets the specified virtual network gateway connection by resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_UpdateTags": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_UpdateTags.js",
+            "title": "Updates a virtual network gateway connection tags.",
+            "description": "Updates a virtual network gateway connection tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_CreateOrUpdate": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_CreateOrUpdate.js",
+            "title": "Creates or updates a virtual network gateway connection in the specified resource group.",
+            "description": "Creates or updates a virtual network gateway connection in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_GetSharedKey": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_GetSharedKey.js",
+            "title": "The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.",
+            "description": "The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_GetSharedKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_SetSharedKey": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_SetSharedKey.js",
+            "title": "The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.",
+            "description": "The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_SetSharedKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGatewayConnections_ResetSharedKey": {
+            "main": "./lib/actions/VirtualNetworkGatewayConnections_ResetSharedKey.js",
+            "title": "The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.",
+            "description": "The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGatewayConnections_ResetSharedKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_VpnDeviceConfigurationScript": {
+            "main": "./lib/actions/VirtualNetworkGateways_VpnDeviceConfigurationScript.js",
+            "title": "Gets a xml format representation for vpn device configuration script.",
+            "description": "Gets a xml format representation for vpn device configuration script.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_VpnDeviceConfigurationScript.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LocalNetworkGateways_List": {
+            "main": "./lib/actions/LocalNetworkGateways_List.js",
+            "title": "Gets all the local network gateways in a resource group.",
+            "description": "Gets all the local network gateways in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LocalNetworkGateways_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LocalNetworkGateways_Delete": {
+            "main": "./lib/actions/LocalNetworkGateways_Delete.js",
+            "title": "Deletes the specified local network gateway.",
+            "description": "Deletes the specified local network gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LocalNetworkGateways_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LocalNetworkGateways_Get": {
+            "main": "./lib/actions/LocalNetworkGateways_Get.js",
+            "title": "Gets the specified local network gateway in a resource group.",
+            "description": "Gets the specified local network gateway in a resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LocalNetworkGateways_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LocalNetworkGateways_UpdateTags": {
+            "main": "./lib/actions/LocalNetworkGateways_UpdateTags.js",
+            "title": "Updates a local network gateway tags.",
+            "description": "Updates a local network gateway tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LocalNetworkGateways_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "LocalNetworkGateways_CreateOrUpdate": {
+            "main": "./lib/actions/LocalNetworkGateways_CreateOrUpdate.js",
+            "title": "Creates or updates a local network gateway in the specified resource group.",
+            "description": "Creates or updates a local network gateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/LocalNetworkGateways_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_List": {
+            "main": "./lib/actions/VirtualNetworkGateways_List.js",
+            "title": "Gets all virtual network gateways by resource group.",
+            "description": "Gets all virtual network gateways by resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_List.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_Delete": {
+            "main": "./lib/actions/VirtualNetworkGateways_Delete.js",
+            "title": "Deletes the specified virtual network gateway.",
+            "description": "Deletes the specified virtual network gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_Delete.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_Get": {
+            "main": "./lib/actions/VirtualNetworkGateways_Get.js",
+            "title": "Gets the specified virtual network gateway by resource group.",
+            "description": "Gets the specified virtual network gateway by resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_UpdateTags": {
+            "main": "./lib/actions/VirtualNetworkGateways_UpdateTags.js",
+            "title": "Updates a virtual network gateway tags.",
+            "description": "Updates a virtual network gateway tags.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_UpdateTags.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_CreateOrUpdate": {
+            "main": "./lib/actions/VirtualNetworkGateways_CreateOrUpdate.js",
+            "title": "Creates or updates a virtual network gateway in the specified resource group.",
+            "description": "Creates or updates a virtual network gateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_CreateOrUpdate.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_ListConnections": {
+            "main": "./lib/actions/VirtualNetworkGateways_ListConnections.js",
+            "title": "Gets all the connections in a virtual network gateway.",
+            "description": "Gets all the connections in a virtual network gateway.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_ListConnections.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_Generatevpnclientpackage": {
+            "main": "./lib/actions/VirtualNetworkGateways_Generatevpnclientpackage.js",
+            "title": "Generates VPN client package for P2S client of the virtual network gateway in the specified resource group.",
+            "description": "Generates VPN client package for P2S client of the virtual network gateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_Generatevpnclientpackage.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GenerateVpnProfile": {
+            "main": "./lib/actions/VirtualNetworkGateways_GenerateVpnProfile.js",
+            "title": "Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.",
+            "description": "Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GenerateVpnProfile.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GetAdvertisedRoutes": {
+            "main": "./lib/actions/VirtualNetworkGateways_GetAdvertisedRoutes.js",
+            "title": "This operation retrieves a list of routes the virtual network gateway is advertising to the specified peer.",
+            "description": "This operation retrieves a list of routes the virtual network gateway is advertising to the specified peer.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GetAdvertisedRoutes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GetBgpPeerStatus": {
+            "main": "./lib/actions/VirtualNetworkGateways_GetBgpPeerStatus.js",
+            "title": "The GetBgpPeerStatus operation retrieves the status of all BGP peers.",
+            "description": "The GetBgpPeerStatus operation retrieves the status of all BGP peers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GetBgpPeerStatus.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GetLearnedRoutes": {
+            "main": "./lib/actions/VirtualNetworkGateways_GetLearnedRoutes.js",
+            "title": "This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.",
+            "description": "This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GetLearnedRoutes.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GetVpnclientIpsecParameters": {
+            "main": "./lib/actions/VirtualNetworkGateways_GetVpnclientIpsecParameters.js",
+            "title": "The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.",
+            "description": "The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GetVpnclientIpsecParameters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_GetVpnProfilePackageUrl": {
+            "main": "./lib/actions/VirtualNetworkGateways_GetVpnProfilePackageUrl.js",
+            "title": "Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.",
+            "description": "Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_GetVpnProfilePackageUrl.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_Reset": {
+            "main": "./lib/actions/VirtualNetworkGateways_Reset.js",
+            "title": "Resets the primary of the virtual network gateway in the specified resource group.",
+            "description": "Resets the primary of the virtual network gateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_Reset.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_ResetVpnClientSharedKey": {
+            "main": "./lib/actions/VirtualNetworkGateways_ResetVpnClientSharedKey.js",
+            "title": "Resets the VPN client shared key of the virtual network gateway in the specified resource group.",
+            "description": "Resets the VPN client shared key of the virtual network gateway in the specified resource group.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_ResetVpnClientSharedKey.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_SetVpnclientIpsecParameters": {
+            "main": "./lib/actions/VirtualNetworkGateways_SetVpnclientIpsecParameters.js",
+            "title": "The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.",
+            "description": "The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_SetVpnclientIpsecParameters.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "VirtualNetworkGateways_SupportedVpnDevices": {
+            "main": "./lib/actions/VirtualNetworkGateways_SupportedVpnDevices.js",
+            "title": "Gets a xml format representation for supported vpn devices.",
+            "description": "Gets a xml format representation for supported vpn devices.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/VirtualNetworkGateways_SupportedVpnDevices.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

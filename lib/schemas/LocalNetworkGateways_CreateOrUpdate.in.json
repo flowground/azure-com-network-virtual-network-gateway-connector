@@ -1,0 +1,121 @@
+{
+    "type": "object",
+    "properties": {
+        "resourceGroupName": {
+            "required": true,
+            "type": "string"
+        },
+        "localNetworkGatewayName": {
+            "required": true,
+            "type": "string",
+            "minLength": 1
+        },
+        "subscriptionId": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "allOf": [
+                {
+                    "description": "Common resource representation.",
+                    "properties": {
+                        "id": {
+                            "description": "Resource ID.",
+                            "type": "string"
+                        },
+                        "location": {
+                            "description": "Resource location.",
+                            "type": "string"
+                        },
+                        "name": {
+                            "description": "Resource name.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "tags": {
+                            "additionalProperties": {
+                                "type": "string"
+                            },
+                            "description": "Resource tags.",
+                            "type": "object"
+                        },
+                        "type": {
+                            "description": "Resource type.",
+                            "readOnly": true,
+                            "type": "string"
+                        }
+                    },
+                    "x-ms-azure-resource": true,
+                    "type": "object"
+                }
+            ],
+            "description": "A common class for general resource information",
+            "properties": {
+                "etag": {
+                    "description": "A unique read-only string that changes whenever the resource is updated.",
+                    "type": "string"
+                },
+                "properties": {
+                    "description": "Properties of the local network gateway.",
+                    "x-ms-client-flatten": true,
+                    "properties": {
+                        "bgpSettings": {
+                            "description": "Local network gateway's BGP speaker settings.",
+                            "properties": {
+                                "asn": {
+                                    "description": "The BGP speaker's ASN.",
+                                    "format": "int64",
+                                    "type": "integer"
+                                },
+                                "bgpPeeringAddress": {
+                                    "description": "The BGP peering address and BGP identifier of this BGP speaker.",
+                                    "type": "string"
+                                },
+                                "peerWeight": {
+                                    "description": "The weight added to routes learned from this BGP speaker.",
+                                    "format": "int32",
+                                    "type": "integer"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "gatewayIpAddress": {
+                            "description": "IP address of local network gateway.",
+                            "type": "string"
+                        },
+                        "localNetworkAddressSpace": {
+                            "description": "AddressSpace contains an array of IP address ranges that can be used by subnets of the virtual network.",
+                            "properties": {
+                                "addressPrefixes": {
+                                    "description": "A list of address blocks reserved for this virtual network in CIDR notation.",
+                                    "items": {
+                                        "type": "string"
+                                    },
+                                    "type": "array"
+                                }
+                            },
+                            "type": "object"
+                        },
+                        "provisioningState": {
+                            "description": "The provisioning state of the LocalNetworkGateway resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.",
+                            "readOnly": true,
+                            "type": "string"
+                        },
+                        "resourceGuid": {
+                            "description": "The resource GUID property of the LocalNetworkGateway resource.",
+                            "type": "string"
+                        }
+                    }
+                }
+            },
+            "required": [
+                "properties"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
